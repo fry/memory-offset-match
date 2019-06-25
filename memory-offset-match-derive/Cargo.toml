@@ -1,0 +1,15 @@
+[package]
+name = "memory-offset-match-derive"
+version = "0.1.0"
+authors = ["Eike Siewertsen <eike@technocreatives.com>"]
+edition = "2018"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+quote = "0.6.12"
+syn = { version = "0.15.38", features = [ "extra-traits" ] }
+proc-macro2 = "0.4.30"
+regex = "1.1.7"
+nom = "5.0.0"

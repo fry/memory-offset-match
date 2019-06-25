@@ -1,0 +1,7 @@
+[workspace]
+members = [
+  "memory-offset-match",
+  "memory-offset-match-core",
+  "memory-offset-match-derive",
+  "memory-offset-match-test",
+]

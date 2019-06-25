@@ -1,0 +1,9 @@
+[package]
+name = "memory-offset-match-core"
+version = "0.1.0"
+authors = ["Eike Siewertsen <eike@technocreatives.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]

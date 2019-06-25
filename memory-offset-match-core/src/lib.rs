@@ -1,3 +1,7 @@
+mod pattern_parse;
+
+pub use pattern_parse::*;
+
 #[cfg(test)]
 mod tests {
     #[test]

@@ -7,4 +7,5 @@ edition = "2018"
 [dependencies]
 regex = "1.1.7"
 lazy_static = "1.3.0"
-# memory-offset-match-derive = { path = "../memory-offset-match-derive" }
+memory-offset-match-derive = { path = "../memory-offset-match-derive" }
+memory-offset-match-core = { path = "../memory-offset-match-core" }

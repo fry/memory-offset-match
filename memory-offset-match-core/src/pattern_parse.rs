@@ -74,43 +74,42 @@ pub fn valid_byte_pattern_regex(input: &str) -> Result<String, Box<dyn std::erro
 #[cfg(test)]
 mod tests {
     use super::*;
-
     #[test]
     fn simple_pattern() {
         let regex = byte_pattern_regex_string("55 89 F7 48 89 FB E8 ? ? ? ? 84 C0 74 ? 8B 53 08");
         assert_eq!(regex.unwrap().1, r"(?-u)\x55\x89\xF7\x48\x89\xFB\xE8....\x84\xC0\x74.\x8B\x53\x08");
     }
 
-    // #[test]
-    // fn simple_pattern_regex() {
-    //     valid_byte_pattern_regex("55 89 F7 48 89 FB E8 ? ? ? ? 84 C0 74 ? 8B 53 08").unwrap();
-    // }
+    #[test]
+    fn simple_pattern_regex() {
+        valid_byte_pattern_regex("55 89 F7 48 89 FB E8 ? ? ? ? 84 C0 74 ? 8B 53 08").unwrap();
+    }
 
-    // #[test]
-    // fn capture_inner_str() {
-    //     let capture = capture_inner("helloworld: ????");
-    //     let res = capture.unwrap().1;
-    //     assert_eq!(res.0, "helloworld");
-    //     assert_eq!(res.1, "????");
-    // }
+    #[test]
+    fn capture_inner_str() {
+        let capture = capture_inner("helloworld: ????");
+        let res = capture.unwrap().1;
+        assert_eq!(res.0, "helloworld");
+        assert_eq!(res.1, "????");
+    }
 
-    // #[test]
-    // fn capture_str() {
-    //     let capture_res = capture("(helloworld: ????)");
-    //     let res = capture_res.unwrap().1;
-    //     assert_eq!(res.0, "helloworld");
-    //     assert_eq!(res.1, "????");
-    // }
+    #[test]
+    fn capture_str() {
+        let capture_res = capture("(helloworld: ????)");
+        let res = capture_res.unwrap().1;
+        assert_eq!(res.0, "helloworld");
+        assert_eq!(res.1, "????");
+    }
 
-    // #[test]
-    // fn capture_pattern() {
-    //     let regex = byte_pattern_regex_string("55 (lol: ????) ? 08");
-    //     assert_eq!(regex.unwrap().1, r"(?-u)\x55(?P<lol>.{4}).\x08");
-    // }
+    #[test]
+    fn capture_pattern() {
+        let regex = byte_pattern_regex_string("55 (lol: ????) ? 08");
+        assert_eq!(regex.unwrap().1, r"(?-u)\x55(?P<lol>.{4}).\x08");
+    }
 
-    // #[test]
-    // #[should_panic]
-    // fn invalid_capture_pattern() {
-    //     byte_pattern_regex_string("55 (: ????) ? 08").unwrap();
-    // }
+    #[test]
+    #[should_panic]
+    fn invalid_capture_pattern() {
+        byte_pattern_regex_string("55 (: ????) ? 08").unwrap();
+    }
 }

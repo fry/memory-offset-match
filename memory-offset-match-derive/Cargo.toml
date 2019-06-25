@@ -13,3 +13,4 @@ syn = { version = "0.15.38", features = [ "extra-traits" ] }
 proc-macro2 = "0.4.30"
 regex = "1.1.7"
 nom = "5.0.0"
+memory-offset-match-core = { path = "../memory-offset-match-core" }

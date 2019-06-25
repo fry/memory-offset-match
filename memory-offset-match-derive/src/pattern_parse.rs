@@ -75,11 +75,11 @@ pub fn valid_byte_pattern_regex(input: &str) -> Result<String, Box<dyn std::erro
 mod tests {
     use super::*;
 
-    // #[test]
-    // fn simple_pattern() {
-    //     let regex = byte_pattern_regex_string("55 89 F7 48 89 FB E8 ? ? ? ? 84 C0 74 ? 8B 53 08");
-    //     assert_eq!(regex.unwrap().1, r"(?-u)\x55\x89\xF7\x48\x89\xFB\xE8....\x84\xC0\x74.\x8B\x53\x08");
-    // }
+    #[test]
+    fn simple_pattern() {
+        let regex = byte_pattern_regex_string("55 89 F7 48 89 FB E8 ? ? ? ? 84 C0 74 ? 8B 53 08");
+        assert_eq!(regex.unwrap().1, r"(?-u)\x55\x89\xF7\x48\x89\xFB\xE8....\x84\xC0\x74.\x8B\x53\x08");
+    }
 
     // #[test]
     // fn simple_pattern_regex() {

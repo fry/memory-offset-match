@@ -43,7 +43,7 @@ fn pattern_token(input: &str) -> IResult<&str, String> {
             regex_hex),
         map(
             tag("?"),
-            |s: &str| ".".to_string()),
+            |_: &str| ".".to_string()),
         map(
             capture,
             regex_capture)

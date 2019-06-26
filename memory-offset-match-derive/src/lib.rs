@@ -38,7 +38,12 @@ pub fn regex_magic_derive(item: TokenStream) -> TokenStream {
 
     println!("regex = {:#?}", regex);
 
-    println!("{:#?}", item);
+    // if let Struct(x) = item.data {
+    //     if let Fields::Named(x) = x.fields {
+    //         println!("{:#?}", x.named.iter().collect::<Vec<_>>());
+    //     }
+    // }
+    // println!("{:#?}", item);
 
     let regex = memory_offset_match_core::valid_byte_pattern_regex(&regex).unwrap();
 
